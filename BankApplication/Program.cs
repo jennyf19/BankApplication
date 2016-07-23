@@ -28,6 +28,12 @@ namespace BankApplication
             //Console.WriteLine("Id: {0}, Name: {1}, Balance: {2:C}", account2.Id, account2.Name, account2.Balance);
             var c1 = Bank.CreateCustomer
                 ("Jenny", "ferriesj@gmail.com", "Seattle, WA");
+
+            var accounts = Bank.GetAllAccountsByCustomerEmail("ferriesj@gmail.com");
+            foreach (var account in accounts)
+            {
+                Console.WriteLine(account.Balance);
+            }
         }
 
     }

@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace BankApplication
 {
-    class Customer
+    public class Customer
     {
 
         #region Properties
         [Key]
         public int Id { get; set; }
+        //sets the string length to max of 250
+        [StringLength(250)]
+
 
         public string Name { get; set; }
 

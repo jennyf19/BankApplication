@@ -40,6 +40,9 @@ namespace BankApplication
             }
         }
 
+        public AccountTypes TypeOfAccount { get; set; }
+        //now, use can select TypeOfAccount from the enum list in AccountTypes
+        
         public virtual Customer Customer { get; set; }
 
         #endregion
