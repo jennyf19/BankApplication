@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
@@ -17,11 +18,12 @@ namespace BankApplication
 
         #region Static
         //region for static members. the memory is stored seperately
-        private static int lastId = 0;
+        //private static int lastId = 0;
 
         #endregion
 
         #region Properties
+        [Key]
         //these are instance members
         public int Id { get; private set; }
 
@@ -38,13 +40,15 @@ namespace BankApplication
             }
         }
 
+        public virtual Customer Customer { get; set; }
+
         #endregion
 
         #region Constructor
 
         public Account()
         {
-            Id = ++lastId;
+            //Id = ++lastId;
             Balance = 300;
         }
 
