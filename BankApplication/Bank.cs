@@ -27,7 +27,10 @@ namespace BankApplication
         public static Customer CreateCustomer
             (string name, string emailAddress, string address)
         {
-            var customer = new Customer
+            return CreateCustomer(name, emailAddress, address, "Default Checking Account", AccountTypes.Checking);
+        }
+
+        /*var customer = new Customer
             {//assign parameter name to property
                 Name = name,
                 Address = address,
@@ -43,7 +46,31 @@ namespace BankApplication
 
             CreateAccount("Default checking account", AccountTypes.Checking, customer);
             //close the db, but since it's a local variable, it will close at the end of this method
-            return customer;
+            return customer;*/
+        
+        //overloaded method - same name as other method, but different parameters
+        public static Customer CreateCustomer
+            (string name, string emailAddress, string address, string accountName, AccountTypes typeOfAccount)
+    { 
+
+        var customer = new Customer
+                {//assign parameter name to property
+                    Name = name,
+                    Address = address,
+                    EmailAddress = emailAddress
+                };
+                var db = new BankModel();
+                //just made a connection to the database
+                db.Customers.Add(customer);
+                //in the db, add a customer to the Customer table
+                db.SaveChanges();
+                //saves the changes to the db
+                db.Dispose();
+
+                CreateAccount("Default checking account", AccountTypes.Checking, customer);
+                //close the db, but since it's a local variable, it will close at the end of this method
+                return customer;
+            
         }
 
         public static Account CreateAccount(string accountName, AccountTypes typeOfAccount, Customer customer)
@@ -62,8 +89,10 @@ namespace BankApplication
             return account;
         }
 
-        public static IEnumerable<Account> GetAllAccountsByCustomerEmail(string emailAddress)
-            //ennumeration of account
+        public static IEnumerable<Account> 
+            //bank mantains a collection of accounts
+            GetAllAccountsByCustomerEmail(string emailAddress)
+            //ennumeration of account, allows anyone with interface to enumerate through account
         {
             var db = new BankModel();
             var customer = db.Customers.Where(c => c.EmailAddress == emailAddress).FirstOrDefault();

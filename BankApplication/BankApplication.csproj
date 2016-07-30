@@ -58,12 +58,29 @@
     <Compile Include="Bank.cs" />
     <Compile Include="bankModel.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Migrations\201607231712336_InitialCreate.cs" />
+    <Compile Include="Migrations\201607231712336_InitialCreate.Designer.cs">
+      <DependentUpon>201607231712336_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607301717565_Changes.cs" />
+    <Compile Include="Migrations\201607301717565_Changes.Designer.cs">
+      <DependentUpon>201607301717565_Changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607231712336_InitialCreate.resx">
+      <DependentUpon>201607231712336_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607301717565_Changes.resx">
+      <DependentUpon>201607301717565_Changes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
