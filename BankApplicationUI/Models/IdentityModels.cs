@@ -29,5 +29,7 @@ namespace BankApplicationUI.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<BankApplication.Account> Accounts { get; set; }
     }
 }
