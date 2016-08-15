@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using BankApplication;
 
+//this is building a web app
+
 namespace BankApplicationUI.Controllers
 {
     public class BankController : Controller
