@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BankApplication.Sdk</id>
+    <version>$version$</version>
+    <title>Bank Application</title>
+    <authors>Catnado</authors>
+    <owners>Catnado</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Cats are awesome</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright &#x00A9; Microsoft Corporation.  All rights reserved.</copyright>
+     </metadata>
+  <files>
+	<file src="C:\Users\jeferrie\Documents\src\BankApplication" target="lib\net40\" />
+  </files>
+</package>
